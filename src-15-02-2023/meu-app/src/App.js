@@ -1,16 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
-import Contato from './Components/Contato';
+import EnvioForm from './Components/EvnForms';
 
 function App() {
-
   return (
-    <div className="App">
-      <div>
-        <h3> alowww</h3>
-        <Contato></Contato>
-      </div>
-    </div>
+    <body>
+
+        <header>
+          <h1>Inicio de tudo</h1>
+        </header>
+
+        <form class="forms" >
+          <label>Nome: </label>
+          <input type="text" placeholder="Digite seu nome" name="nome"/>
+          <EnvioForm />
+        </form>
+
+    </body>
   );
 }
 
