@@ -6,7 +6,7 @@ function App() {
     <body>
 
         <header>
-          <h1>Inicio de tudo</h1>
+          <h1>Consulta Nome</h1>
         </header>
 
         <form class="forms" >
