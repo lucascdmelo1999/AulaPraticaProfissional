@@ -11,7 +11,7 @@ function App() {
 
         <form class="forms" >
           <label>Nome: </label>
-          <input type="text" placeholder="Digite seu nome" name="nome"/>
+          <input type="text" placeholder="Digite seu nome" value="nome"/>
           <EnvioForm />
         </form>
 

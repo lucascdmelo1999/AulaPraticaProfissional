@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,5 +16,10 @@ public class Test_controller {
             return String.format("Erro", HttpStatus.NOT_FOUND);
         }
         return String.format("tudo certo", HttpStatus.OK);
+    }
+    @RequestMapping(value = "/consultanome/{nome}", method = RequestMethod.GET)
+    public String consultanome (@PathVariable("nome") String nome){
+            
+        return nome;
     }
 }
