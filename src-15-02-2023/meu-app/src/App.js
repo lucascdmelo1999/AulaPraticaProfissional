@@ -3,18 +3,12 @@ import EnvioForm from './Components/EvnForms';
 
 function App() {
   return (
-    <body>
+    <body className='forms'>
 
         <header>
-          <h1>Consulta Nome</h1>
+          <h1>Cadastrados</h1>
         </header>
-
-        <form class="forms" >
-          <label>Nome: </label>
-          <input type="text" placeholder="Digite seu nome" value="nome"/>
           <EnvioForm />
-        </form>
-
     </body>
   );
 }

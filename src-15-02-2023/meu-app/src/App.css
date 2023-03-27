@@ -34,13 +34,8 @@ h1{
   color: red;
 }
 
-button{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .forms{
+  justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;

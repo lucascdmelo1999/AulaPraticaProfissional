@@ -1,48 +1,46 @@
-import React, {useState} from 'react';
-import api from "../service/api";
+import React, { useState, useEffect } from 'react';
+import axios from "axios";
 
 function Form(){
-    const [nome , setName] = useState('');
+    const [data, setData] = useState([]);
 
-    const handleNameChange =(e)=>{
-        e.preventDefault();
-        
-        api.getConsultaNome(nome)
-        .then((res) => {
-            setName(res.nome);
-        })
-        .catch(err => 
-            console.log("algo errado, não está certo "+err)
-        );       
-    }
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        'http://localhost:8080/cadas',
+      );
 
-   /**function envioforms(){
-        var texto= document.getElementsByName("nome")[0].value;
-        alert(texto)
-    } */ 
+      setData(result.data);
+    };
 
-    return(
-        <div >
-            <div class="butao">
-                <button onClick={handleNameChange}>Consultar</button>
-            </div>
-            <div>
-                {
-                    nome != null  
-                    ?
-                    <div>
-                        <b>Nome: </b> {nome}
-                    </div>
-                    : 
-                    <div>
-                        <b>Nome invalido</b>
-                    </div>
+    fetchData();
+  }, []);
 
-                }
-            </div>
-        </div>
-        
-    )
+  return (
+    <div>      
+      <ul>
+        {data.map(user => (
+          <li>
+            <span>
+                Id: {user.id}
+            </span> 
+            <br/>
+            <span>
+                Nome: {user.nome}
+            </span> 
+            <br/>
+            <span>
+                Telefone: {user.telefone}
+            </span> 
+            <br/>
+            <span>
+                Email: {user.email}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default Form;
